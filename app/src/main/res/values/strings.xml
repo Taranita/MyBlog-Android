@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MyBlog</string>
+    <string name="title">MyBlog</string>
+    <string name="sub_title">My Personal Blog</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot Your Password?</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="create_account">No AccountYet? Create One?</string>
+    <string name="i_accept_terms_conditions"><![CDATA[I accept terms & conditions]]></string>
+    <string name="name">Name</string>
+    <string name="signup">SIGNUP</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
