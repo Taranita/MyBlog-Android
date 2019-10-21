@@ -14,4 +14,8 @@
     <string name="signup">SIGNUP</string>
     <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="id_colon">Id:</string>
+    <string name="email_colon">Email:</string>
+    <string name="created_date_colon">Created Date:</string>
+    <string name="name_colon">Name:</string>
 </resources>

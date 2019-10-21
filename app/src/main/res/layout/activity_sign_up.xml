@@ -155,7 +155,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_ConfirmPassword" />
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_signUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -186,7 +186,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
