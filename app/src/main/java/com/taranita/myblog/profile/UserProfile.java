@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.taranita.myblog.R;
+import com.taranita.myblog.storage.SharedPrefManager;
 import com.taranita.myblog.volley.VolleySingleton;
 
 import org.json.JSONException;
@@ -40,8 +41,10 @@ public class UserProfile extends AppCompatActivity {
         mEmail = findViewById(R.id.txt_Email);
         mDate = findViewById(R.id.txt_Date);
 
-        Intent data = getIntent();
-        EMAIL = data.getStringExtra("email");
+//        Intent data = getIntent();
+//        EMAIL = data.getStringExtra("email");
+        SharedPrefManager sharedPrefManager = new SharedPrefManager();
+        EMAIL = sharedPrefManager.getEmail(mContext);
         appURL = "http://192.168.0.100/api/getUserDetail.php?email=" + EMAIL;
 
         getUserDetail();
@@ -80,23 +83,6 @@ public class UserProfile extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
-//                    if(response.equals("true")){
-//                        Intent intent = new Intent(mContext, UserProfile.class);
-//                        intent.putExtra("email", EMAIL);
-//                        startActivity(intent);
-//                    }else{
-//                        AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
-//                        alert.setMessage(response);
-//                        alert.setCancelable(false);
-//                        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                dialog.dismiss();
-//                            }
-//                        });
-//                        alert.show();
-//                    }
                 }
             }, new Response.ErrorListener() {
                 @Override

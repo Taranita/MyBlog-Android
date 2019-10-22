@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.taranita.myblog.auth.SignUp;
 import com.taranita.myblog.profile.UserProfile;
+import com.taranita.myblog.storage.SharedPrefManager;
 import com.taranita.myblog.volley.VolleySingleton;
 
 import java.util.HashMap;
@@ -28,6 +30,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
     private String appURL;
     private String EMAIL, PASSWORD;
     MaterialEditText mEmail, mPassword;
@@ -107,8 +110,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if(response.equals("true")){
-                        Intent intent = new Intent(mContext, UserProfile.class);
-                        intent.putExtra("email", EMAIL);
+                        Intent intent = new Intent(mContext, Dashboard.class);
+//                        intent.putExtra("email", EMAIL);
+                        SharedPrefManager sharedPrefManager = new SharedPrefManager();
+                        sharedPrefManager.saveEmail(getApplicationContext(), EMAIL);
+                        Log.d(TAG, "Email saved " + EMAIL);
+
                         startActivity(intent);
                     }else{
                         AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
